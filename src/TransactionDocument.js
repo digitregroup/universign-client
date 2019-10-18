@@ -88,7 +88,7 @@ class TransactionDocument extends BaseObject {
     const validationSchema = Joi.object().keys({
       documentType: Joi.string().valid(Object.values(DocumentType))
         .optional(),
-      content: Joi.string().optional(),
+      content: Joi.binary().optional(),
       url: Joi.string().optional(),
       fileName: Joi.string().required(),
       signatureFields: Joi.array().items(Joi.object().type(SignatureField))
