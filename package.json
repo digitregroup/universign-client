@@ -1,6 +1,6 @@
 {
   "name": "@digitregroup/universign-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeJS Universign client",
   "author": "DigitRE Group",
   "keywords": [
@@ -22,7 +22,7 @@
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
     "nsp": "nsp check",
     "check-version": "git-npm-version-checker -v",
-    "changelog": "auto-changelog -l false"
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
