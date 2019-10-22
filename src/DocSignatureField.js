@@ -16,13 +16,13 @@ module.exports = class DocSignatureField extends SignatureField {
    * @param (Buffer} image        The image to be displayed in the signature field, it will replace the default UNIVERSIGN logo.
    *                              Image format must be JPG, JPEG or PNG. A recommended resolution for this image is 150x36px.
    *                              The image will be resized if the image has a different resolution.
-   * @param {Object} signatureFieldOptions The SignatureField structure
+   * @param {SignatureField} signatureFieldOptions The SignatureField structure
    */
   constructor({
     signerIndex,
     patternName,
     label,
-    image,
+    // image,
   }, signatureFieldOptions) {
     // Creates an error handler
     const errorHandler = createJoiErrorHandler('DocSignatureField');
@@ -32,17 +32,14 @@ module.exports = class DocSignatureField extends SignatureField {
       signerIndex,
       patternName,
       label,
-      image,
+      // image,
     };
 
     // Define the options validation schema
     const validationSchema = Joi.object().keys({
-      name: Joi.string().optional(),
-      page: Joi.number().integer()
-        .required(),
-      x: Joi.number().integer()
-        .required(),
-      y: Joi.number().integer()
+      patternName: Joi.string().optional(),
+      label:       Joi.string().optional(),
+      signerIndex: Joi.number().integer()
         .required(),
     })
       .required();
