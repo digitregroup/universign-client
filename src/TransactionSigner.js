@@ -67,7 +67,7 @@ class TransactionSigner extends BaseObject {
    * @param {string?} lastname This signer’s lastname. Note that this field is mandatory for a self-signed certificate.
    * @param {string?} organization This signer’s organization.
    * @param {string?} profile The name of the signer profile to use for some customizations. It is set up by the UNIVERSIGN team
-   * @param {string?} phone This signer’s mobile phone number that should be written in the international format: the country code followed by the phone number (for example, in France 33 XXXXXXXXX).
+   * @param {string?} phoneNum This signer’s mobile phone number that should be written in the international format: the country code followed by the phone number (for example, in France 33 XXXXXXXXX).
    * @param {string?} language The language for the signer’s transaction. (@see TransactionSigner.LANGUAGE)
    * @param {string?} birthDate This signer’s birth date. This is an option for the certified signature.
    * @param {string?} universignId An external identifier given by the organization that indicates this signer
@@ -86,7 +86,7 @@ class TransactionSigner extends BaseObject {
     lastname,
     organization,
     profile,
-    phone,
+    phoneNum,
     language,
     birthDate,
     universignId,
@@ -108,7 +108,7 @@ class TransactionSigner extends BaseObject {
       lastname,
       organization,
       profile,
-      phone,
+      phoneNum,
       language,
       birthDate,
       universignId,
@@ -126,7 +126,7 @@ class TransactionSigner extends BaseObject {
       lastname: Joi.string().optional(),
       organization: Joi.string().optional(),
       profile: Joi.string().optional(),
-      phone: Joi.string().optional(),
+      phoneNum: Joi.string().optional(),
       language: Joi.string().valid(Object.values(Language))
         .optional(),
       birthDate: Joi.string().optional(),
